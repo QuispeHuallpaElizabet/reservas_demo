@@ -17,6 +17,7 @@ public class AuthService {
     private final RolRepository rolRepository;
     private final UsuarioRolRepository usuarioRolRepository;
     private final UsuarioRepository usuarioRepository;
+    private final RolRepository rolRepository; // Para asignar el rol a cada cliente
 
     public AuthService(
         UsuarioRepository usuarioRepository,
@@ -35,6 +36,10 @@ public class AuthService {
         if (usuarioExistente.isPresent()) {
             throw new RuntimeException("El correo ya está registrado en el sistema.");
         }
+
+        //
+        Rol rolCliente = rolRepository.findByNombre("CLIENTE")
+        .orElseThrow(() -> new RuntimeException("Error: El rol CLIENTE no existe en la base de datos."));
 
         // Guardar el usuario
         Usuario usuarioGuardado = usuarioRepository.save(nuevoUsuario);
