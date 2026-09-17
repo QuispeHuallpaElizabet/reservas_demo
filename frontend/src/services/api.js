@@ -5,7 +5,7 @@ export async function registrarUsuario(usuario) {
   let respuesta;
 
   try {
-    respuesta = await fetch(`${API_URL}/usuarios/registro`, {
+    respuesta = await fetch(`${API_URL}/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,4 +36,33 @@ export async function registrarUsuario(usuario) {
   }
 
   return datos;
+}
+
+
+export async function iniciarSesion(credenciales) {
+  let respuesta;
+
+  try {
+    respuesta = await fetch(`${API_URL}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(credenciales),
+    });
+  } catch {
+    throw new Error(
+      "No se pudo conectar con el servidor. Intenta nuevamente."
+    );
+  }
+
+  const cuerpo = await respuesta.text();
+
+  if (!respuesta.ok) {
+    throw new Error(
+      cuerpo || "No se pudo iniciar sesión."
+    );
+  }
+
+  return cuerpo;
 }
