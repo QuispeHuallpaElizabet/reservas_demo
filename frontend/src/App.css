@@ -21,6 +21,29 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
+.pagina-login {
+  min-height: 100vh;
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at top left, rgba(166, 230, 255, 0.1), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(42, 229, 0, 0.08), transparent 35%),
+    #0a192f;
+}
+
+.tarjeta-login {
+  width: 100%;
+  max-width: 448px;
+  padding: 40px 48px;
+  color: #c5c6cd;
+  background-color: rgba(17, 34, 64, 0.9);
+  border: 1px solid rgba(230, 241, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
 .encabezado {
   margin-bottom: 28px;
   text-align: center;
