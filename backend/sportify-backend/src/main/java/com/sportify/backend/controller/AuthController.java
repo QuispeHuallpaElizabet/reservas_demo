@@ -1,7 +1,7 @@
 package com.sportify.backend.controller;
 
 import com.sportify.backend.model.Usuario;
-import com.sportify.backend.Service.AuthService;
+import com.sportify.backend.service.AuthService;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
