@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { registrarUsuario } from "../services/api";
 import "../App.css";
+
 
 const datosIniciales = {
   nombres: "",
@@ -190,7 +192,7 @@ function Registro() {
         </form>
 
         <footer>
-          ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>
+          ¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link>
         </footer>
       </section>
     </main>
