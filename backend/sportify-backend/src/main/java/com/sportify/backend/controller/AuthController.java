@@ -1,8 +1,8 @@
 package com.sportify.backend.controller;
 
 import com.sportify.backend.model.Usuario;
-import com.sportify.backend.service.AuthService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.sportify.backend.Service.AuthService;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    @Autowired
-    private AuthService authService;
+    private final AuthService authService;
+
+    AuthController(AuthService authService) {
+        this.authService = authService;
+    }
 
     // Endpoint para registrar usuarios
     @PostMapping("/register")

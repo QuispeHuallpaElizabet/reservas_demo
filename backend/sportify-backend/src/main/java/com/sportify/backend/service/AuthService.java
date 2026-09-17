@@ -2,7 +2,6 @@ package com.sportify.backend.service;
 
 import com.sportify.backend.model.Usuario;
 import com.sportify.backend.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -10,8 +9,11 @@ import java.util.Optional;
 @Service
 public class AuthService {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+    private final UsuarioRepository usuarioRepository;
+
+    AuthService(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
+    }
 
     // Método para registrar un usuario nuevo si no existe el correo aún
     public Usuario registrarUsuario(Usuario nuevoUsuario) {
