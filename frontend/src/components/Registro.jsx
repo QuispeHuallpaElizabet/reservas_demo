@@ -192,7 +192,7 @@ function Registro() {
         </form>
 
         <footer>
-          ¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link>
+          ¿Ya tienes una cuenta? <Link to="/Login">Inicia sesión</Link>
         </footer>
       </section>
     </main>
